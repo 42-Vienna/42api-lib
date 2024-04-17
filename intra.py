@@ -203,5 +203,3 @@ class IntraAPIClient(object):
                 print(highlight(json_str, JsonLexer(), TerminalFormatter()))
             except Exception as e:
                 print(e)
-
-ic = IntraAPIClient()

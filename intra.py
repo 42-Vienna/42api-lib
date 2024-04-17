@@ -21,10 +21,7 @@ LOG = logging.getLogger(__name__)
 class IntraAPIClient(object):
     verify_requests = False
 
-    def __init__(self, progress_bar=False, config_filename=None):
-        if config_filename == None:
-            base_dir = os.path.dirname(os.path.realpath(__file__))
-            config_filename = base_dir + '/config.yml'
+    def __init__(self, config_filename, progress_bar=False):
         with open(config_filename, 'r') as cfg_stream:
             config = yaml.load(cfg_stream, Loader=yaml.BaseLoader)
             self.client_id = config['intra']['client']
